@@ -358,7 +358,7 @@ WaitForPromptOnUart("mnv2>")
 
 ExecuteCommand("pause")
 result = ExecuteCommand("cpu GetAllOpcodesCounters")
-print(result)PauseEmulation()
+print(result)
 
 # %% [markdown]
 """
@@ -396,7 +396,7 @@ ResetEmulation()
 import sys
 from pathlib import Path
 renode_path = Path('/root/.config/renode/renode-run.path').read_text()
-sys.path.append()
+sys.path.append(renode_path)
 
 from renode_colab_tools import metrics
 from tools.metrics_analyzer.metrics_parser import MetricsParser
