@@ -382,9 +382,6 @@ WaitForPromptOnUart("main>")
 WriteToUart("1")
 WaitForPromptOnUart("models>")
 
-WriteToUart("2")
-WaitForPromptOnUart("mnv2>")
-
 # %% [markdown]
 """
 On your host you'd run a Python script that would generate PNG images of graphs, or you'd use our library to parse data.
