@@ -1,6 +1,6 @@
 using "/content/digilent_arty_generated.repl"
 
-cpu:
+cpu0:
     init:
         RegisterCustomCSR "BPM" 0xB04  User
         RegisterCustomCSR "BPM" 0xB05  User
