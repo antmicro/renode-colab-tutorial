@@ -300,14 +300,14 @@ WaitForPromptOnUart("models>")
 
 Renode allows for different types of graphical traces.
 
-We currently support the https://www.speedscope.app/ viewer and are working on https://perfetto.dev.
+We currently support the https://www.speedscope.app/ viewer and https://perfetto.dev.
 
 Also, GCOV tracing support is in progress.
 """
 
 # %%
 Restart()
-ExecuteCommand("cpu0 EnableProfiler true $CWD/speedscope.log true")
+ExecuteCommand("cpu0 EnableProfilerCollapsedStack $CWD/speedscope.log true")
 StartEmulation()
 
 WaitForLineOnUart("Hello, World!")
@@ -321,13 +321,15 @@ WaitForPromptOnUart("mnv2>")
 
 WriteToUart("1")
 WaitForPromptOnUart("mnv2>")
+ExecuteCommand("pause")
 
 # %%
 ResetEmulation()
 # download the tracefile
 # you can open it here: https://www.speedscope.app/
+# or see a life example on Renodepedia: https://zephyr-dashboard.renode.io/renodepedia/boards/hifive1/?view=software&demo=Hello_World#trace
 from google.colab import files
-files.download('speedscope.log') 
+files.download('speedscope.log')
 
 # %% [markdown]
 """
