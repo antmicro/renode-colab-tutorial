@@ -80,7 +80,7 @@ Our system is built from the [LiteX](https://github.com/enjoy-digital/litex/) so
 ! pip install -q git+https://github.com/antmicro/renode-colab-tools.git # only needed in the Colab environment
 ! pip install -q git+https://github.com/antmicro/renode-run.git # one of the ways to get Renode (Linux only)
 ! pip install -q https://github.com/antmicro/pyrenode/archive/mh/flushing.zip # a library to talk to Renode from Python
-! pip install -q robotframework==4.0.1 # testing framework used by Renode
+! pip install -q robotframework==6.0.2 # testing framework used by Renode
 # as the compilation process takes several minutes, we will conveniently skip it here and use precompiled binaries
 ! git clone https://github.com/antmicro/renode-colab-tutorial # repository with resources for this tutorial
 ! wget https://raw.githubusercontent.com/enjoy-digital/litex/master/litex/tools/litex_json2renode.py  # a helper script
