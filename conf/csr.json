@@ -317,6 +317,8 @@
         "config_bus_data_width": 32,
         "config_bus_address_width": 32,
         "config_bus_bursting": 0,
+        "config_cpu_count": 1,
+        "config_supports_time_provider": 0,
         "timer0_interrupt": 1,
         "uart_interrupt": 0
     },
@@ -338,6 +340,11 @@
         },
         "csr": {
             "base": 4026531840,
+            "size": 65536,
+            "type": "io"
+        },
+        "clint": {
+            "base": 4026597376,
             "size": 65536,
             "type": "io"
         }
