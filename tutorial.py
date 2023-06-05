@@ -229,6 +229,7 @@ WaitForPromptOnUart("main>")
 
 WriteToUart("1")
 WaitForPromptOnUart("models>")
+ExecuteCommand("pause")
 
 # %% [markdown]
 """
@@ -263,6 +264,7 @@ WaitForPromptOnUart("main>")
 
 WriteToUart("1")
 WaitForPromptOnUart("models>")
+ExecuteCommand("pause")
 
 # %%
 # flush the log and print it out
@@ -293,6 +295,7 @@ WaitForPromptOnUart("main>")
 
 WriteToUart("1")
 WaitForPromptOnUart("models>")
+ExecuteCommand("pause")
 
 # %% [markdown]
 """
