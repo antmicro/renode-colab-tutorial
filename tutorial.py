@@ -381,6 +381,7 @@ WaitForPromptOnUart("main>")
 
 WriteToUart("1")
 WaitForPromptOnUart("models>")
+ExecuteCommand("pause")
 
 # %% [markdown]
 """
