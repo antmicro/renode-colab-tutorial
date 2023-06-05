@@ -21,4 +21,4 @@ cpu0:
         RegisterCustomCSR "BPM" 0xB14  User
         RegisterCustomCSR "BPM" 0xB15  User
 
-cfu0: Verilated.CFUVerilatedPeripheral @ cpu 0
+cfu0: Verilated.CFUVerilatedPeripheral @ cpu0 0

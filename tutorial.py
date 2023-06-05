@@ -189,7 +189,7 @@ logFile $ORIGIN/log true                              # enable logging to file, 
 
 macro reset
 """
-    cpu.cfu0 SimulationFilePathLinux $ORIGIN/renode-colab-tutorial/binaries/libVtop.so       # actual verilated CFU
+    cpu0.cfu0 SimulationFilePathLinux $ORIGIN/renode-colab-tutorial/binaries/libVtop.so       # actual verilated CFU
     sysbus LoadELF $ORIGIN/renode-colab-tutorial/binaries/software.elf                       # software we're going to run
 """
 runMacro $reset
@@ -255,7 +255,7 @@ This gives you a good overview of the application progress and makes it easy to 
 
 # %%
 Restart()
-ExecuteCommand("cpu LogFunctionNames true true") # this enables logging of functions
+ExecuteCommand("cpu0 LogFunctionNames true true") # this enables logging of functions
 StartEmulation()
 
 WaitForLineOnUart("Hello, World!")
@@ -279,11 +279,11 @@ Function names would be more useful if we actually knew what was happening in th
 # %%
 Restart()
 
-ExecuteCommand("cpu LogFunctionNames true true")
+ExecuteCommand("cpu0 LogFunctionNames true true")
 ExecuteCommand("sysbus LogAllPeripheralsAccess true")
 
 # You can also decide to be more precise:
-# ExecuteCommand("cpu LogFunctionNames true 'uart_' true")
+# ExecuteCommand("cpu0 LogFunctionNames true 'uart_' true")
 # ExecuteCommand("sysbus LogPeripheralAccess uart")
 
 StartEmulation()
@@ -307,7 +307,7 @@ Also, GCOV tracing support is in progress.
 
 # %%
 Restart()
-ExecuteCommand("cpu EnableProfiler true $CWD/speedscope.log true")
+ExecuteCommand("cpu0 EnableProfiler true $CWD/speedscope.log true")
 StartEmulation()
 
 WaitForLineOnUart("Hello, World!")
@@ -340,8 +340,8 @@ The same features can be used to analyze the usefulness of other extensions as w
 
 # %%
 Restart()
-ExecuteCommand("cpu EnableRiscvOpcodesCounting")
-ExecuteCommand("cpu EnableCustomOpcodesCounting")
+ExecuteCommand("cpu0 EnableRiscvOpcodesCounting")
+ExecuteCommand("cpu0 EnableCustomOpcodesCounting")
 StartEmulation()
 
 WaitForLineOnUart("Hello, World!")
@@ -357,7 +357,7 @@ WriteToUart("1")
 WaitForPromptOnUart("mnv2>")
 
 ExecuteCommand("pause")
-result = ExecuteCommand("cpu GetAllOpcodesCounters")
+result = ExecuteCommand("cpu0 GetAllOpcodesCounters")
 print(result)
 
 # %% [markdown]
