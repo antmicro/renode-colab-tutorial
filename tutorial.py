@@ -199,12 +199,12 @@ runMacro $reset
 
 # %%
 def Restart():
-  ResetEmulation()                # Does this hang for you? Replace with `restart_renode()`
-  ExecuteScript("script.resc")
+  ResetEmulation()                # Locally you will enter the "Clear" command"
+  ExecuteScript("script.resc")    # You can do it locally with the "i @script.resc" command
   CreateTerminalTester("sysbus.uart", timeout=5)
 
 Restart()
-StartEmulation()
+StartEmulation()                  # Or just "s" in the Monitor
 WaitForLineOnUart("Hello World!") # Is this correct?
 WaitForPromptOnUart("main>")
 
@@ -229,7 +229,8 @@ WaitForPromptOnUart("main>")
 
 WriteToUart("1")
 WaitForPromptOnUart("models>")
-ExecuteCommand("pause")
+ExecuteCommand("pause")            # When you see the "ExecuteCommand" line, you can just
+                                   # use this command in the Monitor
 
 # %% [markdown]
 """
@@ -391,6 +392,8 @@ ExecuteCommand("pause")
 # %% [markdown]
 """
 On your host you'd run a Python script that would generate PNG images of graphs, or you'd use our library to parse data.
+
+You can find more details in [the documentation](https://renode.readthedocs.io/en/latest/basic/metrics.html).
 
 In Colab we use our helper scripts to display things inline.
 """
