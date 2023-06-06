@@ -19,4 +19,5 @@ You can also run it locally, by [downloading Renode](https://builds.renode/io) a
 * Renode documentation https://docs.renode.io
 * Renode overview presentation https://about.renode.io
 * CFU Playground https://github.com/google/CFU-Playground
-
+* Kenning baremetal IREE runtime https://github.com/antmicro/kenning-bare-metal-iree-runtime/
+* Blog note on the topic https://antmicro.com/blog/2023/05/kenning-bare-metal-iree-runtime-renode/
