@@ -18,5 +18,5 @@ You can also run it locally, by [downloading Renode](https://builds.renode/io) a
 * Renode nightly builds - https://builds.renode.io 
 * Renode documentation https://docs.renode.io
 * Renode overview presentation https://about.renode.io
-
+* CFU Playground https://github.com/google/CFU-Playground
 
