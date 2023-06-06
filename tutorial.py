@@ -200,7 +200,7 @@ runMacro $reset
 # %%
 def Restart():
   ResetEmulation()                # Locally you will enter the "Clear" command"
-  ExecuteScript("script.resc")    # You can do it locally with the "i @script.resc" command
+  ExecuteScript("renode-colab-tutorial/script.resc")    # You can do it locally with the "i @script.resc" command
   CreateTerminalTester("sysbus.uart", timeout=5)
 
 Restart()
