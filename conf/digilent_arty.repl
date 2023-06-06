@@ -1,4 +1,4 @@
-using "/content/digilent_arty_generated.repl"
+using "../digilent_arty_generated.repl"
 
 cpu0:
     init:

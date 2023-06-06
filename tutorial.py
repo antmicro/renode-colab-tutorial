@@ -163,10 +163,10 @@ or generated from:
 ! cat renode-colab-tutorial/conf/csr.json
 
 # %%
-! python ./litex_json2renode.py --repl digilent_arty_generated.repl renode-colab-tutorial/conf/csr.json
+! python ./litex_json2renode.py --repl renode-colab-tutorial/digilent_arty_generated.repl renode-colab-tutorial/conf/csr.json
 ! echo "============="
 ! echo "Platform file:"
-! cat digilent_arty_generated.repl
+! cat renode-colab-tutorial/digilent_arty_generated.repl
 ! echo -e "\n\nCFU-specific part:\n==================\n\n"
 ! cat renode-colab-tutorial/conf/digilent_arty.repl
 
@@ -178,19 +178,19 @@ It will be responsible for loading the platform description and loading binaries
 """
 
 # %%
-%%writefile script.resc
+%%writefile renode-colab-tutorial/script.resc
 
 using sysbus                                          # a convenience - allows us to write "uart" instead of "sysbus.uart"
 mach create "digilent_arty"
-machine LoadPlatformDescription $ORIGIN/renode-colab-tutorial/conf/digilent_arty.repl       # load the repl file we just created
+machine LoadPlatformDescription $ORIGIN/conf/digilent_arty.repl       # load the repl file we just created
 uart RecordToAsciinema $ORIGIN/output.asciinema       # movie-like recording of the UART output, open with https://github.com/asciinema/asciinema-player/
 showAnalyzer uart                                     # open a console window for UART, or put the output to the log
 logFile $ORIGIN/log true                              # enable logging to file, flush after every write
 
 macro reset
 """
-    cpu0.cfu0 SimulationFilePathLinux $ORIGIN/renode-colab-tutorial/binaries/libVtop.so       # actual verilated CFU
-    sysbus LoadELF $ORIGIN/renode-colab-tutorial/binaries/software.elf                       # software we're going to run
+    cpu0.cfu0 SimulationFilePathLinux $ORIGIN/binaries/libVtop.so       # actual verilated CFU
+    sysbus LoadELF $ORIGIN/binaries/software.elf                       # software we're going to run
 """
 runMacro $reset
 
@@ -215,7 +215,7 @@ WaitForPromptOnUart("main>")
 # %%
 ResetEmulation()  # flush the asciinema output
 from renode_colab_tools import asciinema
-asciinema.display_asciicast('output.asciinema')
+asciinema.display_asciicast('renode-colab-tutorial/output.asciinema')
 
 # %% [markdown]
 """## Run some tests"""
@@ -270,7 +270,7 @@ ExecuteCommand("pause")
 # %%
 # flush the log and print it out
 ResetEmulation()
-! cat log
+! cat renode-colab-tutorial/log
 
 # %% [markdown]
 """
