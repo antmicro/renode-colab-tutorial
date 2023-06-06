@@ -429,14 +429,7 @@ You already know these keywords: ``ExecuteCommand``, ``StartEmulation``, ``WaitF
 """
 
 # %%
-%%writefile test.robot
-
-*** Settings ***
-Suite Setup                   Setup
-Suite Teardown                Teardown
-Test Setup                    Reset Emulation
-Test Teardown                 Test Teardown
-Resource                      ${RENODEKEYWORDS}
+%%writefile renode-colab-tutorial/test.robot
 
 *** Keywords ***
 Create Machine
@@ -482,7 +475,7 @@ Should Run 1x1 Conv2D Golden Tests
 
 # %%
 renode_path = Path('/root/.config/renode/renode-run.path').read_text()
-! {renode_path}/renode-test test.robot
+! {renode_path}/renode-test renode-colab-tutorial/test.robot
 
 # %% [markdown]
 """
